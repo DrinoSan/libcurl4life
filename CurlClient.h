@@ -1,10 +1,7 @@
-#ifndef REMOTECURL_CURLCLIENT_H
-#define REMOTECURL_CURLCLIENT_H
+#pragma once
 
 #include <string>
-#include <cstdint>
 #include <curl/curl.h>
-#include <memory>
 #include <vector>
 #include <utility>
 
@@ -111,7 +108,6 @@ public:
     {
         bool success = false;
         Status httpStatus;
-        //CURLcode status;
         std::string body = std::string();
         std::string header = std::string();
     };
@@ -123,8 +119,7 @@ public:
             const std::string& uri,
             const std::string& content,
             const std::string& contentType,
-            const std::string& user,
-            const std::string& password,
+            const size_t& port,
             const bool useSSL = false
             );
 
@@ -136,10 +131,6 @@ private:
     std::string responseBody_;
     std::string responseHeader_;
 
-    int sc;
-
     void setHeaders(std::vector<std::pair<std::string, std::string>>& values);
 
 };
-
-#endif //REMOTECURL_CURLCLIENT_H

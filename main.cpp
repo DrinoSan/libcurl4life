@@ -8,10 +8,13 @@ int main() {
 
 
     CurlClient_t client = CurlClient_t();
-    CurlClient_t::HttpResponse_t sand= client.sendMessage(CurlClient_t::HTTP_POST, "https://sardino.free.beeceptor.com", "{\"mit contentTypeAlsVar\": \"FOOO\"}","application/json","","", false);
+    CurlClient_t::HttpResponse_t sand = client.sendMessage(CurlClient_t::HTTP_POST, "https://sardino.free.beeceptor.com", "{\"mit contentTypeAlsVar\": \"FOOO\"}","application/json", 443L);
+    CurlClient_t::HttpResponse_t sand2 = client.sendMessage(CurlClient_t::HTTP_GET, "https://gorest.co.in/public/v1/users/35", "{\"mit contentTypeAlsVar\": \"FOOO\"}","application/json", 443L);
     //CurlClient_t::HttpResponse_t sand= client.sendMessage(CurlClient_t::HTTP_GET, "www.google.com", "","","","", false);
 
     std::cout << sand.body << std::endl;
+    std::cout << std::endl;
+    std::cout << sand2.body << std::endl;
 
     return 0;
 }

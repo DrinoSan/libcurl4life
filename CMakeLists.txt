@@ -12,5 +12,5 @@ include_directories(${Curlcpp_INCLUDE_DIR})
 
 
 
-add_executable(curlClient main.cpp curl.h CurlClient.h curl_client.cpp)
+add_executable(curlClient main.cpp curl.h CurlClient.h CurlClient.cpp)
 target_link_libraries(curlClient curl)
