@@ -8,7 +8,7 @@ int main() {
 
 
     CurlClient_t client = CurlClient_t();
-    CurlClient_t::HttpResponse_t sand= client.sendMessage(CurlClient_t::HTTP_POST, "https://sardino.free.beeceptor.com", "","","","", false);
+    CurlClient_t::HttpResponse_t sand= client.sendMessage(CurlClient_t::HTTP_POST, "https://sardino.free.beeceptor.com", "{\"mit contentTypeAlsVar\": \"FOOO\"}","application/json","","", false);
     //CurlClient_t::HttpResponse_t sand= client.sendMessage(CurlClient_t::HTTP_GET, "www.google.com", "","","","", false);
 
     std::cout << sand.body << std::endl;

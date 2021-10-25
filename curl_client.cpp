@@ -72,7 +72,7 @@ CurlClient_t::HttpResponse_t CurlClient_t::sendMessage(
             break;
         case HTTP_POST:
             curl_easy_setopt(curl_, CURLOPT_HTTPPOST, 1L);
-            requestHeader.push_back(std::make_pair("Content-Type", "application/json"));
+            requestHeader.push_back(std::make_pair("Content-Type", contentType));
 
             //set request body
             curl_easy_setopt(curl_, CURLOPT_POSTFIELDS, content.c_str());
